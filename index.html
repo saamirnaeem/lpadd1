@@ -4,18 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live Predictor: Jeju SK vs Bayern Munich</title>
-    <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 text-gray-800 font-sans flex flex-col min-h-screen">
 
-    <!-- 🟢 AD CONTAINER: Header (e.g., ylliX or Adsterra 728x90) -->
-    <div class="w-full bg-white text-center py-4 shadow-sm border-b border-gray-200">
+    <!-- 🟢 ADSTERRA BANNER: Header (728x90) -->
+    <div class="w-full bg-white text-center py-4 shadow-sm border-b border-gray-200 overflow-hidden">
         <p class="text-xs text-gray-400 mb-1">Advertisement</p>
-        <!-- APNE AD NETWORK KA SCRIPT TAG YAHAN PASTE KAREIN 👇 -->
-        <div id="header-ad" class="h-16 w-full max-w-3xl mx-auto bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
-            Ad Space (Leaderboard)
+        
+        <!-- HEADER AD SCRIPT -->
+        <div id="header-ad" class="flex items-center justify-center min-h-[90px] w-full overflow-hidden">
+            <script>
+              atOptions = {
+                'key' : '8ffb05b3a135e08c397eb11ca26491bd',
+                'format' : 'iframe',
+                'height' : 90,
+                'width' : 728,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/8ffb05b3a135e08c397eb11ca26491bd/invoke.js"></script>
         </div>
+        
     </div>
 
     <!-- Main Content Area -->
@@ -39,57 +49,66 @@
                 </button>
             </div>
 
-            <!-- Results Display (Hidden until voted) -->
+            <!-- Results Display -->
             <div id="results-container" class="hidden mt-6">
                 <h3 class="font-bold text-gray-700 mb-3">Current Results:</h3>
                 <div class="text-left text-sm space-y-3">
-                    
                     <div>
                         <p class="mb-1">Bayern Munich: <span class="float-right font-bold">78%</span></p>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
                             <div class="bg-red-600 h-2.5 rounded-full" style="width: 78%"></div>
                         </div>
                     </div>
-                    
                     <div>
                         <p class="mb-1">Draw: <span class="float-right font-bold">12%</span></p>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
                             <div class="bg-gray-500 h-2.5 rounded-full" style="width: 12%"></div>
                         </div>
                     </div>
-                    
                     <div>
                         <p class="mb-1">Jeju SK: <span class="float-right font-bold">10%</span></p>
                         <div class="w-full bg-gray-200 rounded-full h-2.5">
                             <div class="bg-orange-500 h-2.5 rounded-full" style="width: 10%"></div>
                         </div>
                     </div>
-
                 </div>
                 <p class="text-sm text-green-600 mt-5 font-semibold">Thank you for your prediction!</p>
             </div>
         </div>
     </main>
 
-    <!-- 🟢 AD CONTAINER: Footer (e.g., Monetag Native or Adsterra 320x50) -->
-    <div class="w-full bg-white text-center py-4 shadow-sm border-t border-gray-200">
+    <!-- 🟢 ADSTERRA BANNER: Footer (320x50) -->
+    <div class="w-full bg-white text-center py-4 shadow-sm border-t border-gray-200 overflow-hidden">
         <p class="text-xs text-gray-400 mb-1">Advertisement</p>
-        <!-- APNE AD NETWORK KA SCRIPT TAG YAHAN PASTE KAREIN 👇 -->
-        <div id="footer-ad" class="h-16 w-full max-w-3xl mx-auto bg-gray-200 flex items-center justify-center text-gray-500 text-sm">
-            Ad Space (Banner)
+        
+        <!-- FOOTER AD SCRIPT -->
+        <div id="footer-ad" class="flex items-center justify-center min-h-[50px] w-full overflow-hidden">
+            <script>
+              atOptions = {
+                'key' : '5f8e179be2779ceb66769d53a29f7616',
+                'format' : 'iframe',
+                'height' : 50,
+                'width' : 320,
+                'params' : {}
+              };
+            </script>
+            <script src="https://www.highperformanceformat.com/5f8e179be2779ceb66769d53a29f7616/invoke.js"></script>
         </div>
+        
     </div>
 
-    <!-- JavaScript for Interaction -->
+    <!-- JavaScript for Interaction & Direct Link -->
     <script>
         function castVote(team) {
-            // Hide the buttons
-            document.getElementById('poll-container').classList.add('hidden');
-            // Show the mock results
-            document.getElementById('results-container').classList.remove('hidden');
+            // ADSTERRA DIRECT LINK INTEGRATION
+            let adsterraDirectLink = "https://www.effectivecpmnetwork.com/grk2sngqq2?key=672ddb9655aaa41a1dbfb2e37cdf944c";
             
-            // Optional: You can route this data to Firebase Firestore here if you want to track real votes
-            console.log("User prediction recorded:", team);
+            // Pop-under / New Tab mein open karne ka logic
+            window.open(adsterraDirectLink, '_blank');
+
+            // Poll Logic: Hide buttons and show results
+            document.getElementById('poll-container').classList.add('hidden');
+            document.getElementById('results-container').classList.remove('hidden');
         }
     </script>
 </body>
